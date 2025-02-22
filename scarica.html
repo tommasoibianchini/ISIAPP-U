@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIAPP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            font-family: 'Roboto mono', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            height: 100vh;
+        }
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 15px;
+            width: 102%;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            border: 2px solid #000;
+            margin: -1px 0;
+            font-weight: bold;
+        }
+        /* Stile per il pulsante attivo */
+        .sidebar a.active {
+            background: black;
+            color: white;
+        }
+        .content {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-left: 3px solid black;
+        }
+        .text-content {
+            width: 35%;
+            text-align: justify;
+            height: 91vh;
+            overflow-y: auto; 
+            padding-right: 30px; 
+        }
+        .gallery {
+            width: 60%;
+            height: 102.6vh;
+            margin-top: -80px; 
+            padding-left: 0px;
+            border-left: 3px solid black;
+            overflow-y: auto;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+       
+        
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .side-image {
+            width: 20%;
+            height: auto;
+        }
+        .image-gallery {
+            display: flex;
+            flex-direction: column; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        .image-gallery img {
+            width: 50%; 
+            height: auto;
+            margin-bottom: 0px; 
+            margin-top: 40px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="images/logo.png" alt="ISIAPP Logo">
+        <a href="esplora.html">Esplora</a>
+        <a href="scarica.html">Scarica</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="content">
+        <div class="text-content">
+            <h1>Avvia subito il download di ISIAPP.</h1>
+            <p>L’applicazione è completamente gratuita, anche se al momento solo gli utenti iOs potranno usufruirne, ma ci stiamo muovendo per renderla compatibile con ogni sistema operativo nel minor tempo possibile.</p><br><br>
+            <p>Una volta scaricata l’applicazione, alla prima apertura vi verrà chiesto di effettuare la registrazione tramite la mail istituzionale (inserire mail esterne dal database annullerà la procedura di registrazione).</p><br><br>
+            
+            
+            
+            <div class="horizontal-line"></div>
+            
+           
+            <div class="image-container">
+                <a href="https://www.figma.com/design/SkTd604gn42hO4YPkdx0Jq/ISIAPP-U?node-id=36-570&t=rB3xUdxxs6fFuJWU-0">
+                    <img src="images/apple.png" alt="Immagine 1" class="side-image">
+                </a>
+              
+            </div>
+        </div>
+        <div class="gallery">
+            
+           
+            <div class="image-gallery">
+                <img src="images/2.png" alt="Immagine 1">
+                <img src="images/14.png" alt="Immagine 1">
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+       
+        let currentURL = window.location.href.split("/").pop(); 
+
+      
+        let links = document.querySelectorAll(".sidebar a");
+
+        
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentURL) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>

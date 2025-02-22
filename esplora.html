@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISIAPP - Esplora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            font-family: 'Roboto mono', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            height: 100vh;
+        }
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 15px;
+            width: 102%;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            border: 2px solid #000;
+            margin: -1px 0;
+            font-weight: bold;
+        }
+        .sidebar a.active {
+            background: black;
+            color: white;
+        }
+        .content {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            border-left: 3px solid black;
+        }
+        .text-content {
+            width: 35%;
+            text-align: justify;
+            height: 91vh;
+            overflow-y: auto;
+            padding-right: 30px;
+        }
+        .gallery {
+            width: 60%;
+            height: 100vh; 
+            overflow-y: scroll;
+            padding-left: 0px;
+            border-left: 3px solid black;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            margin-top: -60px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h1 strong {
+            display: block;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .gallery h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .image-gallery {
+            display: flex;
+            flex-direction: column; 
+            gap: 20px; 
+            align-items: center; 
+            
+        }
+        .image-gallery img {
+            width: 50%; 
+            height: auto; 
+            margin-bottom: 20px;
+            margin-top: 20px;
+            object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="images/logo.png" alt="ISIAPP Logo">
+        <a href="esplora.html">Esplora</a>
+        <a href="scarica.html">Scarica</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="content">
+        <div class="text-content">
+            <h1><strong>ISIAPP,</strong> un ecosistema pensato dagli studenti per gli studenti.</h1>
+            <p>ISIAPP nasce dalla necessità degli studenti di avere a disposizione uno strumento semplice, intuitivo e completo con il quale gestire tutte le attività e anche le numerose informazioni universitarie.</p><br><br>
+            <p>Il design semplice e minimalista dell’applicazione strizza l’occhio al sito preesistente dell’ISIA di Urbino, aggiungendo un tocco colorato grazie alla funzione di selezione del tema colore per permettere all’utente una semplice ma efficace personalizzazione dell’ambiente di lavoro.</p><br><br>
+            <p>Lo scheletro dell’applicazione si fonda su tre schermate principali che abbiamo definito fondamentali: La schermata “home”, la schermata “calendario” e la schermata “area utente”. Dentro queste tre pagine è possibile reperire ogni informazione necessaria al quotidiano svolgimento delle lezioni e della (caotica) vita universitaria.</p><br><br>
+            <p>Tutte quelle funzioni e informazioni escluse dalle schermate principali, come ad esempio la modulistica e le impostazioni dell’applicazione sono contenute in un pratico menù ad hamburger, dal quale si possono anche raggiungere i social ufficiali dell’istituto.</p><br><br>
+            <p>Infine, basandoci sulle esigenze raccolte tramite le interviste svolte durante il corso, abbiamo deciso di includere una sezione dedicata alla biblioteca, dove sarà possibile sfogliare l’intero catalogo di libri (e filtrare la selezione per categoria, se desiderato) e prenotare il volume desiderato con un semplice clic.</p>
+        </div>
+        <div class="gallery">
+            
+            <div class="image-gallery">
+                
+                <img src="images/3.png" alt="Immagine 2">
+                <img src="images/4.png" alt="Immagine 3">
+                <img src="images/5.png" alt="Immagine 4">
+                <img src="images/6.png" alt="Immagine 1">
+                <img src="images/7.png" alt="Immagine 2">
+                <img src="images/8.png" alt="Immagine 3">
+                <img src="images/9.png" alt="Immagine 4">
+                <img src="images/10.png" alt="Immagine 4">
+                <img src="images/11.png" alt="Immagine 3">
+                <img src="images/12.png" alt="Immagine 4">
+                <img src="images/13.png" alt="Immagine 4">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        let currentPage = window.location.pathname.split("/").pop(); 
+
+      
+        let links = document.querySelectorAll(".sidebar a");
+
+        
+        links.forEach(link => {
+           
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+
+       
+        window.onload = function() {
+            let gallery = document.querySelector('.image-gallery');
+            let secondImage = gallery.children[1]; 
+            gallery.scrollTop = secondImage.offsetTop;
+        };
+    </script>
+</body>
+</html>
